@@ -16,3 +16,27 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.album {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imgContainer {
+  max-width: 400px;
+  max-height: 700px;
+  overflow: hidden;
+}
+
+.imgContainer img {
+  width: 100%;
+  min-height: 100%;
+}
+
+img {
+  float: left;
+  width:  100px;
+  height: 100px;
+  object-fit: cover;
+}

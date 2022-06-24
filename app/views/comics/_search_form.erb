@@ -1,10 +1,11 @@
-<%# form_with(url: searchcomic_path, local:true, method: "get") do %>
-  <div class="field has-addons">
-    <div class="control">
+<div class="container text-center">
+  <h1>Characters</h1>
+  <small><a href="http://marvel.com">Data provided by Marvel. © 2022 MARVEL</a></small>
+  <hr>
+  <%= form_with(url: comics_path, local:true, method: "get") do %>
+    <div class="form-group">
       <%= text_field_tag(:search_term, nil, class:'input', placeholder:'Comics by title') %>
     </div>
-    <div class="control">
-      <%= submit_tag("Search", class:"button is-info") %>
-    </div>
-  </div>
-<%# end %>
+    <%= submit_tag("Search", class:"button is-info") %>
+  <% end %>
+</div>
