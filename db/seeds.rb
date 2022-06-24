@@ -1,7 +1,20 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+# frozen_string_literal: true
+
+Comic.destroy_all
+
+require 'open-uri'
+require 'json'
+require 'digest/md5'
+
+timestamp = 1.to_s
+digest = Digest::MD5.hexdigest(timestamp + ENV['MARVEL_PRIVATE_KEY'] + ENV['MARVEL_PUBLIC_KEY'])
+
+@base_url = 'https://gateway.marvel.com:443/v1/public/'
+@authorization = "ts=#{timestamp}&apikey=#{ENV['MARVEL_PUBLIC_KEY']}&hash=#{digest}"
+
+def marvel_fetch(url)
+  HTTParty.get(url)['data']['results']
+end
+
+# Populate the Comic database
+require_relative 'comics_seed'
