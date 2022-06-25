@@ -6,7 +6,11 @@ class ComicsController < ApplicationController
   end
 
   def search
-    @pagy, @records = pagy(Comic.joins(:characters).where("lower(characters.name) = lower('#{params[:hero_name]}')").order(:on_sale_date))
+    return redirect_to action: 'index' if params[:hero_name].blank?
+
+    @pagy, @records = pagy(Comic.joins(:characters)
+                                .where("lower(characters.name) = lower('#{params[:hero_name]}')")
+                                .order(:on_sale_date))
     render :index
   end
 end
