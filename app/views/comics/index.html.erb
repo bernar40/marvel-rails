@@ -1,19 +1,11 @@
 <div class="container text-center">
-  <% if Current.user %>
-    Logged in as: <%= Current.user.email %>
-    <br>
-    <%= link_to 'Edit Password', edit_password_path %>
-    <%= button_to 'Logout', logout_path, method: :delete %>
-  <% else %>
-    <%= link_to 'Sign Up', sign_up_path %>
-    or
-    <%= link_to 'Login', sign_in_path %>
-  <% end %>
+  <%=render partial: 'auth'%>
+
   <h1>Comics</h1>
   <small><a href="http://marvel.com">Data provided by Marvel. © 2022 MARVEL</a></small>
   <hr>
 
-  <%=render partial: 'comics/search_form'%>
+  <%=render partial: 'search_form'%>
   <br>
   <div class="row">
     <%@records.each do |comic|%>
