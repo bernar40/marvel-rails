@@ -36,10 +36,11 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
+gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+gem 'bcrypt', '~> 3.1', '>= 3.1.18'
 gem 'httparty', '~> 0.20.0'
 gem 'mechanize', '~> 2.8', '>= 2.8.5'
 gem 'pagy', '~> 5.10', '>= 5.10.1'
-gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -48,8 +49,8 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem 'rubocop', '~> 1.30', '>= 1.30.1'
   gem 'pry'
+  gem 'rubocop', '~> 1.30', '>= 1.30.1'
   gem 'web-console'
 end
 
