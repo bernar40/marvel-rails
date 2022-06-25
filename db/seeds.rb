@@ -18,3 +18,5 @@ end
 
 # Populate the Comic database
 require_relative 'comics_seed'
+require_relative 'characters_seed'
+require_relative 'character_comics_seed'
