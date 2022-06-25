@@ -4,4 +4,9 @@ class ComicsController < ApplicationController
   def index
     @pagy, @records = pagy(Comic.all.order(:on_sale_date))
   end
+
+  def search
+    @pagy, @records = pagy(Comic.includes(:characters).where(characters: { name: params[:hero_name] }).order(:on_sale_date))
+    render :index
+  end
 end

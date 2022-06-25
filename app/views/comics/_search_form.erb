@@ -1,11 +1,6 @@
-<div class="container text-center">
-  <h1>Comics</h1>
-  <small><a href="http://marvel.com">Data provided by Marvel. © 2022 MARVEL</a></small>
-  <hr>
-  <%= form_with(url: comics_path, local:true, method: "get") do %>
-    <div class="form-group">
-      <%= text_field_tag(:search_term, nil, class:'input', placeholder:'Comics by title') %>
-    </div>
-    <%= submit_tag("Search", class:"button is-info") %>
-  <% end %>
-</div>
+<%= form_with(url: comics_search_path, local:true, method: "get") do %>
+  <div class="form-group">
+    <%= text_field_tag(:hero_name, nil, class:'input', placeholder:'Hero name') %>
+  </div>
+  <%= submit_tag("Search", class:"button is-info") %>
+<% end %>

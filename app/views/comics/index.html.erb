@@ -1,19 +1,23 @@
-<%=render partial: 'comics/search_form'%>
-<br>
-<div class="row">
-  <%@records.each do |comic|%>
-    <div class="card col-lg-4 col-md-6 col-sm-12">
-      <div class="album">
-        <div class="imgContainer">
-          <img src="<%=comic.thumbnail_path%>.<%=comic.thumbnail_extension%>" alt="<%=comic.title%>" class="img-fluid"/>
+<div class="container text-center">
+  <h1>Comics</h1>
+  <small><a href="http://marvel.com">Data provided by Marvel. © 2022 MARVEL</a></small>
+  <hr>
+
+  <%=render partial: 'comics/search_form'%>
+  <br>
+  <div class="row">
+    <%@records.each do |comic|%>
+      <div class="card col-lg-4 col-md-6 col-sm-12">
+        <div class="album">
+          <div class="imgContainer">
+            <img src="<%=comic.thumbnail_path%>.<%=comic.thumbnail_extension%>" alt="<%=comic.title%>" class="img-fluid"/>
+          </div>
+        </div>
+        <div>
+          <p class="text-center h4"><%=comic.title%></p>
         </div>
       </div>
-      <div>
-        <p class="text-center h4"><%=comic.title%></p>
-      </div>
-    </div>
-  <%end%>
-</div>
-<div class="container text-center">
+    <%end%>
+  </div>
   <%== pagy_bootstrap_nav(@pagy) %>
 </div>
