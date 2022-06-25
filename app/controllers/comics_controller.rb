@@ -6,7 +6,7 @@ class ComicsController < ApplicationController
   end
 
   def search
-    @pagy, @records = pagy(Comic.includes(:characters).where(characters: { name: params[:hero_name] }).order(:on_sale_date))
+    @pagy, @records = pagy(Comic.joins(:characters).where("lower(characters.name) = lower('#{params[:hero_name]}')").order(:on_sale_date))
     render :index
   end
 end
