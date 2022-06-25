@@ -2,6 +2,6 @@
 
 class ComicsController < ApplicationController
   def index
-    @pagy, @records = pagy(Comic.all)
+    @pagy, @records = pagy(Comic.all.order(:on_sale_date))
   end
 end

@@ -24,19 +24,14 @@
 }
 
 .imgContainer {
-  max-width: 400px;
-  max-height: 700px;
   overflow: hidden;
 }
 
 .imgContainer img {
   width: 100%;
   min-height: 100%;
-}
-
-img {
   float: left;
-  width:  100px;
-  height: 100px;
+  width:  400px;
+  height: 400px;
   object-fit: cover;
 }

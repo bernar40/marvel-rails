@@ -17,7 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_24_180059) do
   create_table "comics", force: :cascade do |t|
     t.string "title"
     t.string "description"
-    t.datetime "modified"
+    t.datetime "on_sale_date"
     t.integer "page_count"
     t.string "thumbnail_path"
     t.string "thumbnail_extension"

@@ -3,7 +3,7 @@ class CreateComics < ActiveRecord::Migration[7.0]
     create_table :comics do |t|
       t.string :title
       t.string :description
-      t.datetime :modified
+      t.datetime :on_sale_date
       t.integer :page_count
       t.string :thumbnail_path
       t.string :thumbnail_extension
