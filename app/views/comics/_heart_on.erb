@@ -1,0 +1,5 @@
+<%= form_with(url: comics_remove_from_favorites_path(comic_id: comic.id), remote: true, method: "delete") do %>
+  <%= image_submit_tag("heart_on.png", class: "heart-on", id: "heart_#{comic.id}",
+                        :onmouseover => "this.src='assets/heart_hover.png'", 
+                        :onmouseout => "this.src='assets/heart_on.png'") %>
+<% end %>

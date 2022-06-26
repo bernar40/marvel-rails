@@ -6,6 +6,9 @@ Rails.application.routes.draw do
 
   get '/comics', to: 'comics#index'
   get '/comics/search', to: 'comics#search'
+  get '/comics/my-favorites', to: 'comics#my_favorites'
+  post '/comics/add-to-favorites', to: 'comics#add_to_favorites'
+  delete '/comics/remove-from-favorites', to: 'comics#remove_from_favorites'
 
   get 'sign_up', to: 'registrations#new'
   post 'sign_up', to: 'registrations#create'

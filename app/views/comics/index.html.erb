@@ -13,7 +13,11 @@
         <div class="album">
           <div class="imgContainer">
             <img src="<%=comic.thumbnail_path%>.<%=comic.thumbnail_extension%>" alt="<%=comic.title%>" class="img-fluid comic-thumb"/>
-            <%=link_to image_tag('heart_off.png', class: "heart"), root_path%>
+            <% if @hearts[comic.id].present? %>
+              <%=render partial: 'heart_on', locals: { comic: comic }%>
+            <% else %>
+              <%=render partial: 'heart_off', locals: { comic: comic }%>
+            <% end %>
           </div>
         </div>
         <div>
