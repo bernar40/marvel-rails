@@ -16,6 +16,23 @@ First, install all the necessary gems with bundle
 bundle install
 ```
 
+Second, save the Marvel API keys in your ENV
+
+```bash
+export MARVEL_PRIVATE_KEY=<your_private_key>
+export MARVEL_PUBLIC_KEY=<your_public_key>
+```
+
+Update your console either by reopening it or by running
+If on macOS Catalina or newer:
+```bash
+source ~/.zshrc
+```
+If on Windows, Linux or older versions of macOS:
+```bash
+source ~/.bashrc
+```
+
 To run the application first run the following command, after installing ruby and rails gem
 
 ```bash
