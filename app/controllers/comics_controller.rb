@@ -4,7 +4,7 @@ class ComicsController < ApplicationController
   before_action :require_user_logged_in!, only: %i[my_favorites add_to_favorites]
 
   def index
-    @pagy, @records = pagy(Comic.all.order(:on_sale_date, :title))
+    @pagy, @records = pagy(Comic.all.order(on_sale_date: :desc, title: :asc))
 
     retrive_favorites
   end
@@ -12,10 +12,10 @@ class ComicsController < ApplicationController
   def search
     return redirect_to action: 'index' if params[:hero_name].blank?
 
-    @pagy, @records = pagy(Comic.includes(:characters)
-                                .where("lower(characters.name) = lower('#{params[:hero_name]}')")
-                                .references(:characters)
-                                .order(:on_sale_date, :title))
+    @pagy, @records = pagy(Comic.includes(:character_comics)
+                                .where("lower(character_comics.name) = lower('#{params[:hero_name]}')")
+                                .references(:character_comics)
+                                .order(on_sale_date: :desc, title: :asc))
 
     retrive_favorites
 
@@ -25,7 +25,7 @@ class ComicsController < ApplicationController
   def my_favorites
     @pagy, @records = pagy(Comic.includes(:favorite_comics)
                                 .where(favorite_comics: { user_id: Current.user.id })
-                                .order(:on_sale_date, :title))
+                                .order(on_sale_date: :desc, title: :asc))
 
     @hearts = @records.map { |i| [i.id, 'heart_on.png'] }.to_h
 

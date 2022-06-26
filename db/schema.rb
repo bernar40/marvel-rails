@@ -15,18 +15,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_25_233449) do
   enable_extension "plpgsql"
 
   create_table "character_comics", force: :cascade do |t|
-    t.bigint "character_id", null: false
+    t.string "character_name", null: false
     t.bigint "comic_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["character_id"], name: "index_character_comics_on_character_id"
     t.index ["comic_id"], name: "index_character_comics_on_comic_id"
-  end
-
-  create_table "characters", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "comics", force: :cascade do |t|
@@ -56,7 +49,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_25_233449) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "character_comics", "characters"
   add_foreign_key "character_comics", "comics"
   add_foreign_key "favorite_comics", "comics"
   add_foreign_key "favorite_comics", "users"
