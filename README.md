@@ -10,6 +10,12 @@ Marvel Rails is a ruby on rails implementation of a comic book browser from Marv
 
 ## Usage
 
+First, install all the necessary gems with bundle
+
+```bash
+bundle install
+```
+
 To run the application first run the following command, after installing ruby and rails gem
 
 ```bash
