@@ -36,8 +36,8 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
-gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'bcrypt', '~> 3.1', '>= 3.1.18'
+gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'httparty', '~> 0.20.0'
 gem 'mechanize', '~> 2.8', '>= 2.8.5'
 gem 'pagy', '~> 5.10', '>= 5.10.1'
