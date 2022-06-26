@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 def comics_url(offset)
-  "#{@base_url}comics?orderBy=onsaleDate&&limit=100&offset=#{offset}&#{@authorization}"
+  "#{@base_url}comics?orderBy=-onsaleDate&&limit=100&offset=#{offset}&#{@authorization}"
 end
 
 # for a quicker verification, lower this number -> Marvel has 52K available comics
