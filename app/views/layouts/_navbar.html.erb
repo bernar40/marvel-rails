@@ -3,7 +3,9 @@
       <div class="container">
         <ul class="nav navbar-nav">
           <li><%= link_to "Comics", root_path %></li>
-          <li><%= link_to "My Favorites", comics_my_favorites_path %></li>
+          <% if Current.user %>
+            <li><%= link_to "My Favorites", comics_my_favorites_path %></li>
+          <% end %>
         </ul>
       </div>
     </div>

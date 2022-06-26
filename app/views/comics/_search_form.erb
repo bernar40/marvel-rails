@@ -1,4 +1,5 @@
-<%= form_with(url: comics_search_path, local:true, method: "get") do %>
+<% search_endpoint = @favorite_search ? comics_search_favorites_path : comics_search_path%>
+<%= form_with(url: search_endpoint, local:true, method: "get") do %>
   <div class="form-group">
     <%= text_field_tag(:hero_name, nil, class:'input', placeholder:'Hero name') %>
   </div>
