@@ -5,7 +5,8 @@ def comics_url(offset)
 end
 
 # for a quicker verification, lower this number -> Marvel has 52K available comics
-number_of_comics = 52_361
+# Recommended: 1000
+number_of_comics = 10_000
 
 i = 0
 @count = 100
