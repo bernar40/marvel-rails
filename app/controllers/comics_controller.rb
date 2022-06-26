@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ComicsController < ApplicationController
-  before_action :require_user_logged_in!, only: %i[my_favorites add_to_favorites]
+  before_action :require_user_logged_in!, only: %i[search_favorites my_favorites add_to_favorites remove_from_favorites]
 
   def index
     @pagy, @records = pagy(Comic.all)
