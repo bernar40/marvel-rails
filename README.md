@@ -1,24 +1,52 @@
-# README
+# Marvel Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Marvel Rails is a ruby on rails implementation of a comic book browser from Marvel, with functionalities such as Basic Auth, favorites and search.
 
-Things you may want to cover:
+## Requirements
 
-* Ruby version
+* Ruby version: 3.1.2
+* Rails version: 7.0.3
+* Database: PostgreSQL 14.4
 
-* System dependencies
+## Usage
 
-* Configuration
+To run the application first run the following command, after installing ruby and rails gem
 
-* Database creation
+```bash
+rails db:create db:migrate db:seed
+```
 
-* Database initialization
+To then run the application use the following command
+```bash
+rails s
+```
 
-* How to run the test suite
+## How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+To test the application, use the command:
+```bash
+rails test
+```
 
-* Deployment instructions
+To test individual modules, use
+```bash
+rails test:models
+```
+```bash
+rails test:controllers
+```
 
-* ...
+To test individual files, use (for example)
+```bash
+rails test test/models/comic_test.rb
+```
+
+## Extra
+To make the pagination of the application I used the gem Pagy, which according to them is the fastest one, compared to the most used ones (Ransack/WillPaginate).
+
+Also this gem is very simple to use and very versatile. 
+
+To learn more about the gem, visit their git: [Pagy Git](https://github.com/ddnexus/pagy)
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
