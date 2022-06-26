@@ -1,4 +1,7 @@
-<script>
-  var heart_to_fill = document.getElementById("<%=@heart_id%>");
-  heart_to_fill.setAttribute('src', 'assets/heart_off.png')
-</script>
+<turbo-stream action="replace" target="<%=@heart_id%>">
+  <template>
+    <div id="<%=@heart_id%>">
+      <%=render partial: 'heart_off', locals: { comic_id: @comic_id }%>
+    </div>
+  </template>
+</turbo-stream>

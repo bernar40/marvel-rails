@@ -1,5 +1,5 @@
-<%= form_with(url: comics_add_to_favorites_path(comic_id: comic.id), remote: true, method: "post") do %>
-  <%= image_submit_tag("heart_off.png", class: "heart-off", id: "heart_#{comic.id}",
-                        :onmouseover => "this.src='assets/heart_hover.png'", 
-                        :onmouseout => "this.src='assets/heart_off.png'") %>
+<%= form_with(url: comics_add_to_favorites_path(comic_id: comic_id), remote: true, method: "post", id: "heart_#{comic_id}") do %>
+  <%= image_submit_tag("heart_off.png", class: "heart-off",
+                        :onmouseover => "this.src='#{asset_path('heart_hover.png')}'", 
+                        :onmouseout => "this.src='#{asset_path('heart_off.png')}'") %>
 <% end %>
