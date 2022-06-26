@@ -13,7 +13,7 @@ class ComicsController < ApplicationController
     return redirect_to action: 'index' if params[:hero_name].blank?
 
     @pagy, @records = pagy(Comic.includes(:character_comics)
-                                .where("lower(character_comics.name) = lower('#{params[:hero_name]}')")
+                                .where("lower(character_comics.character_name) = lower('#{params[:hero_name]}')")
                                 .references(:character_comics)
                                 .order(on_sale_date: :desc, title: :asc))
 
